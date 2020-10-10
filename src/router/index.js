@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "@/views/Home";
 import Login from "@/views/Login";
+import SignUp from "@/views/SignUp"
 import Cabinet from "@/views/Cabinet";
 import QuestPage from '@/views/QuestPage'
 import EditQuest from '@/views/EditQuest'
@@ -34,6 +35,11 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login
+  },
+  {
+    path: "/signup",
+    name: "SignUp",
+    component: SignUp
   },
   {
     path: "/cabinet",

@@ -36,6 +36,21 @@
         <div>
           <img src="" alt="">
           <p>{{quest.author}}</p>
+        />
+        <br>
+          <p class=" text-xl leading-relaxed">ID: {{ quest.id }}</p>
+          <p class=" text-xl leading-relaxed">
+            {{ quest.description }}
+          </p>
+          <br>
+          <router-link v-if="user.username == quest.author" :to="{ name: 'EditQuest', params: { id: quest.id } }">
+            <p class="border">Редактировать квест</p>
+          </router-link>
+        <div class="Location blue-text mb-4">
+          <p class="">Место</p>
+          <p class=" font-semibold text-lg">
+            {{ quest.type }}
+          </p>
         </div>
         <span>
           <p class=" text-lg font-medium mb-4">1. Начало места</p>
@@ -60,6 +75,6 @@ export default {
   created() {
     this.$store.dispatch("fetchQuest", this.$route.params.id);
   },
-  computed: mapGetters(["quest"])
+  computed: mapGetters(["quest", "user"])
 };
 </script>

@@ -10,8 +10,8 @@
       :params="{
         header: 'Вы уверены, что хотите удалить квест?',
         body: 'Его нельзя будет восстановить!'
-      }"
-    ></Dialog>
+      }">
+    </Dialog>
   </div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
     editQuest(data) {
       this.putQuest({ id: this.$route.params.id, quest: data }).then(
         path => {
-          this.$router.push({ path: `/quests/${path}` });
+          this.$router.push({ path: `/quest/${path}` });
         },
         err => {
           console.log("got no data", err);
@@ -45,7 +45,6 @@ export default {
       this.deleteQuest(this.$route.params.id).then(
         path => {
           this.$router.push({ path: "/" });
-          console.log(path + " deleted");
         },
         err => {
           console.log("got no data", err);
