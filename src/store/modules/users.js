@@ -10,8 +10,8 @@ export default {
     setUsers(state, users) {
       state.users = users;
     },
-    setUser(state, users) {
-      state.user = users;
+    setUser(state, user) {
+      state.user = user;
     },
     createUser(state, newUser) {
       state.users.push(newUser);
@@ -51,6 +51,10 @@ export default {
           }
         );
       });
+    },
+    async resetUser({ commit, state }) {
+      await commit('setUser', [])
+      return 
     },
     // async putUser({ commit }, { id, user }) {
     //   return new Promise((resolve, reject) => {

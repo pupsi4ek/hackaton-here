@@ -46,11 +46,19 @@
             Sign Up
           </div>
         </router-link>
-        <router-link v-if="user.length!=0" to="/login">
-          <div class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
-            Logout
-          </div>
-        </router-link>
+        <div v-if="user.length!=0" @click="showDialog = true" class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
+          Logout
+        </div>
+        <p v-if="showDialog">Уверен?</p>
+        <button v-if="showDialog" @click="logOut">ДА</button>
+        <!-- <Dialog
+            v-if="showDialog"
+            @close="showDialog = false"
+            @submit="logOut"
+            :params="{
+              header: 'Вы уверены, что хотите выйти?',
+            }">
+        </Dialog> -->
       </div>
     </div>
   </div>
@@ -58,12 +66,21 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
+import Dialog from "@/components/Dialog";
 
 export default {
   data (){
     return {
-      opened : false
+      opened : false,
+      showDialog: false
+    }
+  },
+  methods: {
+    ...mapActions(["resetUser"]),
+    logOut() {
+      this.resetUser()
+      this.showDialog = false
     }
   },
   computed: mapGetters(["user"])

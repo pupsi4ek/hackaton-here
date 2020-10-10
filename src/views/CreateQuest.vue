@@ -1,13 +1,18 @@
 <template>
   <div class="ml-5">
-    <p>Создание квеста:</p>
-    <QuestForm :buttonText="buttonText" @saveForm="createQuest" />
+    <div v-if="user.length!=0">
+      <p>Создание квеста:</p>
+      <QuestForm :buttonText="buttonText" @saveForm="createQuest" />
+    </div>
+    <div v-else>
+      Залогиньтесь
+    </div>
   </div>
 </template>
 
 <script>
 import QuestForm from "@/components/QuestForm";
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "CreateQuest",
@@ -29,6 +34,7 @@ export default {
         }
       );
     }
-  }
+  },
+  computed: mapGetters(["user"])
 };
 </script>

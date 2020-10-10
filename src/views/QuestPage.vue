@@ -15,7 +15,7 @@
             {{ quest.description }}
           </p>
           <br>
-          <router-link :to="{ name: 'EditQuest', params: { id: quest.id } }">
+          <router-link v-if="user.username == quest.author" :to="{ name: 'EditQuest', params: { id: quest.id } }">
             <p class="border">Редактировать квест</p>
           </router-link>
         <div class="Location blue-text mb-4">
@@ -43,6 +43,6 @@ export default {
   created() {
     this.$store.dispatch("fetchQuest", this.$route.params.id);
   },
-  computed: mapGetters(["quest"])
+  computed: mapGetters(["quest", "user"])
 };
 </script>

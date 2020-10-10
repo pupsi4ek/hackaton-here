@@ -72,7 +72,7 @@ export default {
       username: this.data.username,      
       password: this.data.password,
       email: this.data.email,
-      quests: ['0']
+      quests: '[]'
     };
   },
   methods: {
