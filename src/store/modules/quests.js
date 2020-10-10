@@ -49,8 +49,8 @@ export default {
     createQuest(state, newQuest) {
       state.quest.push(newQuest);
     },
-    editEvent() {},
-    deleteEvent() {},
+    editQuest() {},
+    deleteQuest() {},
     // updateWord(state, input) {
     //   state.word = input;
     // },
@@ -88,7 +88,7 @@ export default {
       return new Promise((resolve, reject) => {
         axiosInstance.post(Quests(), quest).then(
           res => {
-            commit("createEvent", { ...quest });
+            commit("createQuest", { ...quest });
             resolve(res.data.id);
           },
           err => {
@@ -97,7 +97,7 @@ export default {
         );
       });
     },
-    async putEvent({ commit }, { id, quest }) {
+    async putQuest({ commit }, { id, quest }) {
       return new Promise((resolve, reject) => {
         axiosInstance.put(Quest(id), quest).then(
           res => {
@@ -110,7 +110,7 @@ export default {
         );
       });
     },
-    async deleteEvent({ commit }, id) {
+    async deleteQuest({ commit }, id) {
       return new Promise((resolve, reject) => {
         axiosInstance.delete(Quest(id)).then(
           res => {
@@ -129,7 +129,7 @@ export default {
     //   commit("updateWord", input);
     // },
     async updateQuests({ state, dispatch }) {
-      if (Object.keys(state.events).length == 0) {
+      if (Object.keys(state.quests).length == 0) {
         await dispatch("fetchQuests");
       }
     },

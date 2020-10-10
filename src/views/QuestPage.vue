@@ -15,9 +15,9 @@
             {{ quest.description }}
           </p>
           <br>
-          <!-- <router-link :to="{ name: 'EditQuest', params: { id: quest.id } }">
-            <p>Редактировать квест</p>
-          </router-link> -->
+          <router-link :to="{ name: 'EditQuest', params: { id: quest.id } }">
+            <p class="border">Редактировать квест</p>
+          </router-link>
         <div class="Location blue-text mb-4">
           <p class="">Место</p>
           <p class=" font-semibold text-lg">

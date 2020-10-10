@@ -34,6 +34,11 @@
             Logout
           </div>
         </router-link>
+        <router-link to="/create">
+          <div class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
+            Create quest
+          </div>
+        </router-link>
         <router-link to="/cabinet">
           <div class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
             Cabinet
