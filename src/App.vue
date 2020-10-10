@@ -20,6 +20,9 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: #F7FAFC;
+}
 #app {
   font-family: "Montserrat", sans-serif;
 }
