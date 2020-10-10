@@ -21,7 +21,7 @@ export default {
 
 <style>
 body {
-  background-color: #F7FAFC;
+  background-color: #EDF2F7;
 }
 #app {
   font-family: "Montserrat", sans-serif;
