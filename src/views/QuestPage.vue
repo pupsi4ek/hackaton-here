@@ -25,9 +25,7 @@
           </p>
         </div>
         <br>
-        <button
-          class="w-full bg-green-500 h-16 font-semibold text-xl text-white mt-6"
-        >
+        <button class="w-full bg-green-500 h-16 font-semibold text-xl text-white mt-6">
           Регистрация
         </button>
       </div>
