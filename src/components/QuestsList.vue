@@ -5,14 +5,16 @@
       v-for="quest in questsView"
       :key="quest.id"
     >
+      <router-link :to="{ name: 'Quest', params: { id: quest.id } }">
         <questCard :quest="quest" />
+      </router-link>
     </div>
     <!-- <p>{{questsCount}}</p> -->
   </div>
 </template>
 
 <script>
-import questCard from '@/components/QuestCard'
+import questCard from '@/components/QuestCard.vue'
 import { mapGetters } from 'vuex'
 
 export default {
