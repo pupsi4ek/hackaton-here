@@ -4,22 +4,32 @@
     <div>
       <img class="mx-auto h-16w-auto" src="../assets/images/logoNoText.png" alt="Workflow">
       <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
-        Войдите в свой аккаунт
+        {{ text }}
       </h2>
-      <p class="mt-2 text-center text-sm leading-5 text-gray-600">
-        <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
-          Нету аккаунта? Зарегистрируйтесь
-        </a>
-      </p>
+      <div class="mt-2 text-center text-sm leading-5 text-gray-600">
+        <router-link  v-if="signPage" to='/login'>
+          <div class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+            Есть аккаунт? Войдите
+          </div>
+        </router-link>
+        <router-link v-else to='/signup'>
+          <div class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+            Нет аккаунта? Зарегистрируйтесь
+          </div>
+        </router-link>
+      </div>
     </div>
-    <form class="mt-8" action="#" method="POST">
+    <form class="mt-8" @submit.prevent="submit">
       <input type="hidden" value="true">
       <div class="rounded-md shadow-sm">
-        <div>
-          <input type="email" required class="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email">
+        <div v-if="signPage">
+          <input v-model="username" type="username" required class="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Имя пользователя">
         </div>
         <div class="mt-4">
-          <input type="password" required class="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Пароль">
+          <input v-model="email" type="email" required class="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email">
+        </div>
+        <div class="mt-4">
+          <input v-model="password" type="password" required class="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Пароль">
         </div>
       </div>
 
@@ -32,9 +42,9 @@
         </div>
 
         <div class="text-sm leading-5">
-          <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+          <div class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
             Забыли пароль?
-          </a>
+          </div>
         </div>
       </div>
 
@@ -55,7 +65,26 @@
 
 <script>
 export default {
-    name: "singIn"
-
+  name: "singIn",
+  props: ['text', 'signPage', 'data'],
+  data() {
+    return {
+      username: this.data.username,      
+      password: this.data.password,
+      email: this.data.email,
+      quests: ['0']
+    };
+  },
+  methods: {
+    submit() {
+      console.log(this.quests);
+      this.$emit("saveForm", {        
+        username: this.username,
+        password: this.password,
+        email: this.email,
+        quests: this.quests
+      });
+    }
+  }
 }
 </script>

@@ -15,7 +15,7 @@
       "title": "Экскурсия по Кремлю",
       "questImage": "MSK.gif",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      "author": "KirillShapkin",
+      "author": "Kirill Shapkin",
       "published": "2020-10-10T13:30:00.511Z",
       "type": "public",
       "location": "Москва, тверская ул."
@@ -29,18 +29,27 @@
       "id": 2
     },
     {
-      "title": "qst",
+      "title": "МОСКВА",
       "questImage": "MSK.gif",
       "description": "fqwfwf rgrhrth hohoho lala",
-      "author": "lolik",
+      "author": "Kirill Shapkin",
       "type": "private",
       "id": 3
+    },
+    {
+      "title": "REAL QUEST",
+      "questImage": "MSK.gif",
+      "description": "me",
+      "author": "ya",
+      "type": "wef",
+      "id": 5
     }
   ],
   "users": [
     {
       "id": 0,
       "username": "Vasiliy Petrov",
+      "password": "qwerty123",
       "email": "vp@yandex.ru",
       "quests": [
         0,
@@ -49,12 +58,49 @@
     },
     {
       "id": 1,
-      "username": "KirillShapkin",
+      "username": "Kirill Shapkin",
+      "password": "qwerty321",
       "email": "KirShap@yandex.ru",
       "quests": [
         0,
         2
       ]
+    },
+    {
+      "username": "Serega",
+      "password": "qqqqqq123",
+      "email": "seriy@mail.ru",
+      "id": 2
+    },
+    {
+      "username": "qw",
+      "password": "rwge",
+      "email": "er@w.ru",
+      "id": 3
+    },
+    {
+      "username": "qwq",
+      "password": "qqqwww",
+      "email": "eqwq@w.ru",
+      "id": 4
+    },
+    {
+      "username": "wefwww",
+      "password": "rwgeffwefwe",
+      "email": "er@w.rue",
+      "id": 5
+    },
+    {
+      "username": "eg",
+      "password": "rwgeeee",
+      "email": "er@w.rur",
+      "id": 6
+    },
+    {
+      "username": "tyj",
+      "password": "tyjtyj",
+      "email": "tyj@w.ru",
+      "id": 7
     }
   ]
 }

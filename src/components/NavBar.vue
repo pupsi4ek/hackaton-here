@@ -21,29 +21,34 @@
 
     <div class="md:flex items-center " :class="{'block':opened, 'hidden':!opened}">
       <div class="flex flex-col md:flex-row md:mx-6">
-        <router-link to="/">
+        <router-link to="/create">
+          <div class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
+            +
+          </div>
+        </router-link>
+        <!-- <router-link to="/">
           <div class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
             Home
           </div>
+        </router-link> -->
+        <router-link v-if="user.length!=0" to="/cabinet">
+          <div class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
+            {{ user.username }}
+          </div>
         </router-link>
-        <router-link to="/login">
+        <router-link v-else to="/login">
           <div class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
             Login
           </div>
         </router-link>
-        <router-link to="/login">
+        <router-link v-if="user.length==0" to="/signup">
+          <div class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
+            Sign Up
+          </div>
+        </router-link>
+        <router-link v-if="user.length!=0" to="/login">
           <div class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
             Logout
-          </div>
-        </router-link>
-        <router-link to="/create">
-          <div class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
-            Create quest
-          </div>
-        </router-link>
-        <router-link to="/cabinet">
-          <div class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
-            Cabinet
           </div>
         </router-link>
       </div>
@@ -53,13 +58,14 @@
 </template>
 
 <script>
-export default {
-    data ()
-    {
-        return {
-            opened : false
-        }
-    }
+import {mapGetters} from 'vuex'
 
+export default {
+  data (){
+    return {
+      opened : false
+    }
+  },
+  computed: mapGetters(["user"])
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <div class="login">
-    <singIn :text="text" :signPage="false"/>
+  <div class="signup">
+    <singIn :text="text" :signPage="true" @saveForm='createUser'/>
   </div>
 </template>
 
@@ -8,22 +8,22 @@
 import singIn from '../components/singIn'
 import { mapActions } from "vuex";
 
-export default {
-  name: 'Login',
+export default {  
+  name: 'SignUp',
   components: {
     singIn
   },
   data(){
     return{
-      text: 'Войдите в свой аккаунт'
+      text: 'Зарегистрируйтесь'
     }
   },
   methods: {
-    ...mapActions(["postQuest"]),
-    createQuest(data) {
-      this.postQuest(data).then(
+    ...mapActions(["postUser"]),
+    createUser(data) {
+      this.postUser(data).then(
         path => {
-          this.$router.push("quest/" + path);
+          this.$router.push("/");
         },
         err => {
           console.log("got no data", err);
