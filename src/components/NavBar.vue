@@ -1,10 +1,12 @@
 <template>
-<nav class="bg-white shadow">
+<nav class="bg-white shadow w-full">
   <div class="container mx-auto px-6 py-3 md:flex md:justify-between md:items-center">
     <div class="flex justify-between items-center">
       <div>
         <router-link to="/">
-        <div class="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700">Geo</div>
+        <div class="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700">
+          <img class=" h-12" src="../assets/images/logo.png" alt="logo">
+        </div>
         </router-link>
       </div>
 
