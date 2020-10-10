@@ -26,7 +26,3 @@ export default {
   props: ["quest"]
 }
 </script>
-
-<style>
-
-</style>
