@@ -6,7 +6,7 @@
       :key="quest.id"
     >
       <router-link :to="{ name: 'Quest', params: { id: quest.id } }">
-        <questCard :quest="quest" />
+        <QuestCard :quest="quest" />
       </router-link>
     </div>
     <!-- <p>{{questsCount}}</p> -->
