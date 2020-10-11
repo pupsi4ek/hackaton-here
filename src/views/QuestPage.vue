@@ -30,7 +30,7 @@
           </router-link>
         <div class="Location blue-text my-4">
           <p>Место</p>
-          <p class=" font-medium text-purple-500">{{quest.map[0]}}</p>
+          <p class=" font-medium text-purple-500">{{address}}</p>
         </div>
         <div class="Rating blue-text my-4">
           <p>Возрастное ограничение</p>
@@ -74,13 +74,29 @@ export default {
       center:{ 
         lat: 55.932791, 
         lng: 37.439879
-      }
+      },
+      address: null
     }  
   },
   methods: {
+    getAddress(coords){
+      let platform = new H.service.Platform({
+        'apikey': 'q7fkEh0tQvYbpV6iFqcjBcjwj--TI19lNuGxiWxLvcM'
+      });
+
+      var service = platform.getSearchService();
+      
+      service.reverseGeocode({
+        at: coords.replace(/\s/g, '')
+      }, (result) => {
+        this.address = result.items[0].title
+        return result.items[0].title
+      }, alert);
+    }    
   },
-  created() {
+  created: function () {
     this.$store.dispatch("fetchQuest", this.$route.params.id);
+    this.getAddress(this.quest.map[0])
   },
   computed: {
     ...mapGetters(["quest", "user"]),
@@ -88,9 +104,7 @@ export default {
       let coords = []
       for (let i in this.quest.map){
         let arr = this.quest.map[i].split(',')
-        let obj = {}
-        obj['lat'] = parseFloat(arr[0])
-        obj['lng'] = parseFloat(arr[1])
+        let obj = {'lat': parseFloat(arr[0]), 'lng': parseFloat(arr[1])}
         coords.push(obj)
       }
       return coords
