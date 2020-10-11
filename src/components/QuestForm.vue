@@ -11,7 +11,6 @@
         <BaseInput class="mt-5" type="text" placeholder="Тип квеста" v-model="type" />
       </div>
       <BaseButton class=" mt-16" :buttonText="buttonText" type="submit"/>
-      <!-- <button @click="uploadFile">UPLOAD IMG</button> -->
     </form>
   </div>
 </template>
@@ -35,7 +34,6 @@ export default {
       title: this.data.title,
       questImage: this.data.questImage,
       description: this.data.description,
-      author: this.user.username,
       type: this.data.type
     };
   },
@@ -45,7 +43,7 @@ export default {
         title: this.title,
         questImage: this.questImage,
         description: this.description,
-        author: this.author,
+        author: this.user.username,
         type: this.type
       });
     }

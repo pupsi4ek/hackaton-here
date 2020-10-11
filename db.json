@@ -3,11 +3,11 @@
     {
       "id": 1,
       "title": "Экскурсия по Москве",
-      "questImage":"MSK.gif",
-      "description":"Убеги от болельщиков после матча спартак - цска, по пути найди солягу",
-      "author":"AAA",
-      "type":"public",
-      "stages":[
+      "questImage": "MSK.gif",
+      "description": "Убеги от болельщиков после матча спартак - цска, по пути найди солягу",
+      "author": "AAA",
+      "type": "public",
+      "stages": [
         {
           "title": "Первый этап",
           "text": "На этом месте когда-то какал я сам",
@@ -42,11 +42,11 @@
     {
       "id": 3,
       "title": "Спортивное ориентирование по Химкам",
-      "questImage":"quests.jpg",
-      "description":"Убеги от болельщиков после матча спартак - цска, по пути найди солягу",
-      "author":"Gleb",
-      "type":"private",
-      "stages":[
+      "questImage": "quests.jpg",
+      "description": "Убеги от болельщиков после матча спартак - цска, по пути найди солягу",
+      "author": "Gleb",
+      "type": "private",
+      "stages": [
         {
           "title": "Первый этап",
           "text": "На этом месте когда-то какал я сам",
@@ -95,7 +95,6 @@
       "username": "AAA",
       "password": "q",
       "email": "AAA@yandex.ru",
-      "avatar": "aang.jpg",
       "quests": [
         0,
         3
@@ -106,7 +105,6 @@
       "username": "Gleb",
       "password": "q",
       "email": "Gleb@gmail.com",
-      "avatar": "aang.jpg",
       "quests": [
         3
       ]
