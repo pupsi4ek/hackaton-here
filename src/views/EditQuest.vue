@@ -1,5 +1,6 @@
 <template>
-  <div class="ml-5">
+  <div class="container mx-auto">
+    <div class="w-3/4 bg-white px-10 pt-12 pb-24 my-12 rounded-md">
     <p>Редактирование квеста:</p>
     <QuestForm :buttonText="buttonText" :data="quest" @saveForm="editQuest" />
     <button id="show-modal" @click="showDialog = true">Удалить квест</button>
@@ -12,6 +13,7 @@
         body: 'Его нельзя будет восстановить!'
       }">
     </Dialog>
+  </div>
   </div>
 </template>
 

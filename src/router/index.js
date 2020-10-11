@@ -7,6 +7,7 @@ import Cabinet from "@/views/Cabinet";
 import QuestPage from '@/views/QuestPage'
 import EditQuest from '@/views/EditQuest'
 import CreateQuest from '@/views/CreateQuest'
+import PlayQuest from '@/views/PlayQuest'
 
 Vue.use(VueRouter);
 
@@ -25,6 +26,11 @@ const routes = [
     path: "/quest/:id/edit",
     name: "EditQuest",
     component: EditQuest
+  },
+  {
+    path: "/quest/:id/play",
+    name: "PlayQuest",
+    component: PlayQuest
   },
   {
     path: "/create",
