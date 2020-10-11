@@ -95,6 +95,7 @@
       "username": "AAA",
       "password": "q",
       "email": "AAA@yandex.ru",
+      "avatar": "aang.jpg",
       "quests": [
         0,
         3
@@ -105,6 +106,7 @@
       "username": "Gleb",
       "password": "q",
       "email": "Gleb@gmail.com",
+      "avatar": "aang.jpg",
       "quests": [
         3
       ]

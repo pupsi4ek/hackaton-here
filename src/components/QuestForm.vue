@@ -1,33 +1,41 @@
 <template>
-  <form @submit.prevent="submit">
-    <input type="text" placeholder="Заголовок" v-model="title" /><br />
-    <input type="text" placeholder="Обложка квеста" v-model="questImage" />
-    <p>MSK.gif</p>
-    <br />
-    <input
-      type="text"
-      placeholder="Описание квеста"
-      v-model="description"
-    /><br />
-    <input type="text" placeholder="Автор" v-model="author" /><br />
-    <br />
-    <input type="text" placeholder="Тип меропритяия" v-model="type" />
-    <br />
-    <button type="submit">{{ buttonText }}</button>
-    <!-- <button @click="uploadFile">UPLOAD IMG</button> -->
-  </form>
+  <div class="">
+    <form class="flex flex-col w-3/5" @submit.prevent="submit">
+      <div class="main-inf mt-8">
+        <h2 class=" font-medium text-xl">Основная информация</h2>
+        <p class="mb-6">Заполните информацию, чтобы игроки сразу поняли о чем ваш квест. Заитересуйте их необычным названием и описанием</p>
+        <BaseInput type="text" placeholder="Заголовок" v-model="title"/>
+        <BaseArea class=" mt-5" placeholder="Описание" v-model="description"/>
+        <p class="">Загрузите обложку</p>
+        <BaseInput class="" type="file" placeholder="Обложка квеста" v-model="questImage" />
+        <BaseInput class="mt-5" type="text" placeholder="Тип квеста" v-model="type" />
+      </div>
+      <BaseButton class=" mt-16" :buttonText="buttonText" type="submit"/>
+      <!-- <button @click="uploadFile">UPLOAD IMG</button> -->
+    </form>
+  </div>
 </template>
 
 <script>
+import BaseInput from '../components/reusable/BaseInput'
+import BaseArea from '../components/reusable/BaseArea'
+import BaseButton from '../components/reusable/BaseButton'
+import {mapGetters} from 'vuex'
+
 export default {
   name: "QuestForm",
+  components: {
+    BaseInput,
+    BaseArea,
+    BaseButton
+  },
   props: ["buttonText", "data"],
   data() {
     return {
       title: this.data.title,
       questImage: this.data.questImage,
       description: this.data.description,
-      author: this.data.author,
+      author: this.user.username,
       type: this.data.type
     };
   },
@@ -41,6 +49,7 @@ export default {
         type: this.type
       });
     }
-  }
+  },
+  computed: mapGetters(["user"])
 };
 </script>

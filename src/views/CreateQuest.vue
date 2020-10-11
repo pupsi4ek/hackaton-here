@@ -1,7 +1,7 @@
 <template>
-  <div class="ml-5">
-    <div v-if="user.length!=0">
-      <p>Создание квеста:</p>
+  <div class="container mx-auto ">
+    <div class="w-3/4 bg-white px-10 pt-12 pb-24 my-12 rounded-md" v-if="user.length!=0">
+      <h1 class=" font-bold text-3xl">Создание квеста</h1>
       <QuestForm :buttonText="buttonText" @saveForm="createQuest" />
     </div>
     <div v-else>
