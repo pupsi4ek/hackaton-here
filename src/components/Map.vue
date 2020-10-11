@@ -59,6 +59,19 @@ export default {
         let marker = new H.map.Marker(LocationOfMarker, { icon: icon });
         map.addObject(marker);
       }
+
+      // let platform = new H.service.Platform({
+      //   'apikey': 'q7fkEh0tQvYbpV6iFqcjBcjwj--TI19lNuGxiWxLvcM'
+      // });
+
+      // var service = platform.getSearchService();
+      
+      // service.reverseGeocode({
+      //   at: '52.5309,13.3847,150'
+      // }, (result) => {
+      //   console.log(result);
+      // }, alert);
+
     }
   }
 };
