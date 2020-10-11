@@ -1,106 +1,103 @@
 {
   "quests": [
     {
-      "id": 0,
-      "title": "Гид по Москве очень весело и классно",
-      "questImage": "MSK.gif",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      "author": "Vasiliy Petrov",
-      "published": "2020-10-10T12:30:00.511Z",
-      "type": "public",
-      "location": "Москва, тверская ул."
-    },
-    {
       "id": 1,
-      "title": "Экскурсия по Кремлю",
-      "questImage": "MSK.gif",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      "author": "Kirill Shapkin",
-      "published": "2020-10-10T13:30:00.511Z",
-      "type": "public",
-      "location": "Москва, тверская ул."
+      "title": "Экскурсия по Москве",
+      "questImage":"MSK.gif",
+      "description":"Убеги от болельщиков после матча спартак - цска, по пути найди солягу",
+      "author":"AAA",
+      "type":"public",
+      "stages":[
+        {
+          "title": "Первый этап",
+          "text": "Это первый этап квеста, здесь вы должны покакать",
+          "checkType": "location"
+        },
+        {
+          "title": "Второй этап",
+          "text": "Это второй этап квеста, здесь вы должны сфоткать жепу",
+          "checkType": "photo"
+        },
+        {
+          "title": "Третий этап",
+          "text": "Это третий этап квеста, здесь вы должны ответь сколько у меня пальцев на левой ноге",
+          "checkType": "input",
+          "answer": "3"
+        }
+      ],
+      "map": [
+        "55.050505, 37.121212",
+        "55.050305, 37.181212",
+        "55.050505, 37.125612"
+      ],
+      "rating": "18",
+      "likes": 7,
+      "dislikes": 66
     },
     {
-      "title": "Квест от гидры",
-      "questImage": "quests.jpg",
-      "description": "Ищем прикоп 5 м МК на 100г мефчика",
-      "author": "Еблан с жепкой на афке",
-      "type": "private",
-      "id": 2
-    },
-    {
-      "title": "МОСКВА",
-      "questImage": "MSK.gif",
-      "description": "fqwfwf rgrhrth hohoho lala",
-      "author": "Kirill Shapkin",
-      "type": "private",
-      "id": 3
-    },
-    {
-      "title": "REAL QUEST",
-      "questImage": "MSK.gif",
-      "description": "me",
-      "author": "ya",
-      "type": "wef",
-      "id": 5
+      "id": 3,
+      "title": "Спортивное ориентирование по Химкам",
+      "questImage":"quests.jpg",
+      "description":"Убеги от болельщиков после матча спартак - цска, по пути найди солягу",
+      "author":"Gleb",
+      "type":"private",
+      "stages":[
+        {
+          "title": "Первый этап",
+          "text": "Это первый этап квеста, здесь вы должны покакать",
+          "checkType": "location"
+        },
+        {
+          "title": "Второй этап",
+          "text": "Это второй этап квеста, здесь вы должны сфоткать жепу",
+          "checkType": "photo"
+        },
+        {
+          "title": "Третий этап",
+          "text": "Это третий этап квеста, здесь вы должны ответь сколько у меня пальцев на левой ноге",
+          "checkType": "input",
+          "answer": "3"
+        }
+      ],
+      "map": [
+        "55.050505, 37.121212",
+        "55.050305, 37.181212",
+        "55.050505, 37.125612"
+      ],
+      "rating": "18",
+      "likes": 6,
+      "dislikes": 99
     }
   ],
   "users": [
     {
       "id": 0,
       "username": "Vasiliy Petrov",
-      "password": "qwerty123",
+      "password": "q",
       "email": "vp@yandex.ru",
+      "avatar": "aang.jpg",
       "quests": [
-        0,
-        1
+        0
       ]
     },
     {
       "id": 1,
-      "username": "Kirill Shapkin",
-      "password": "qwerty321",
-      "email": "KirShap@yandex.ru",
+      "username": "AAA",
+      "password": "q",
+      "email": "AAA@yandex.ru",
       "quests": [
         0,
-        2
+        3
       ]
     },
     {
-      "username": "Serega",
-      "password": "qqqqqq123",
-      "email": "seriy@mail.ru",
-      "id": 2
-    },
-    {
-      "username": "qw",
-      "password": "rwge",
-      "email": "er@w.ru",
-      "id": 3
-    },
-    {
-      "username": "qwq",
-      "password": "qqqwww",
-      "email": "eqwq@w.ru",
-      "id": 4
-    },
-    {
-      "username": "wefwww",
-      "password": "rwgeffwefwe",
-      "email": "er@w.rue",
-      "id": 5
-    },
-    {
-      "username": "eg",
-      "password": "rwgeeee",
-      "email": "er@w.rur",
-      "id": 6
-    },
-    {
-      "username": "tyj",
-      "password": "tyjtyj",
-      "email": "tyj@w.ru",
-      "id": 7
+      "id": 2,
+      "username": "Gleb",
+      "password": "q",
+      "email": "Gleb@gmail.com",
+      "quests": [
+        3
+      ]
     }
   ]
 }
