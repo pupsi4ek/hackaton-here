@@ -10,7 +10,7 @@
       />
       <div class="flex items-start py-5 px-5">
         <div>
-          <p class="text-sm text-purple-500 mb-1">{{quest.location}} </p>
+          <p class="text-sm text-purple-500 mb-1">{{quest.map[0]}} </p>
           <h1 class="title-font text-xl h-16 font-bold text-gray-900 mb-3">
             {{ quest.title }}
           </h1>

@@ -26,11 +26,6 @@
             +
           </div>
         </router-link>
-        <!-- <router-link to="/">
-          <div class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
-            Home
-          </div>
-        </router-link> -->
         <router-link v-if="user.length!=0" to="/cabinet">
           <div class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0">
             {{ user.username }}
@@ -51,14 +46,13 @@
         </div>
         <p v-if="showDialog">Уверен?</p>
         <button v-if="showDialog" @click="logOut">ДА</button>
-        <!-- <Dialog
+         <Dialog
             v-if="showDialog"
             @close="showDialog = false"
             @submit="logOut"
             :params="{
               header: 'Вы уверены, что хотите выйти?',
-            }">
-        </Dialog> -->
+            }" />
       </div>
     </div>
   </div>
