@@ -37,7 +37,8 @@ export default {
     quests: [],
     quest: [],
     // word: "",
-    questsView: []
+    questsView: [],
+    ans: []
   },
   mutations: {
     setQuests(state, quests) {

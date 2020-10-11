@@ -9,12 +9,23 @@
         <p class=" text-xl leading-relaxed mb-10">
           {{ quest.description }}
         </p>
-        <div v-for="stage in quest.stages" :key="stage.title">
-          <div class=" mb-6">
-            <p class=" text-2xl font-medium leading-relaxed">{{stage.title}}</p>
-            <p>{{stage.text}}</p>
-            <p>{{stage.checkType}}</p>
-            <BaseInput placeholder="Введите ответ"/>
+        <div >
+          <div class="mb-6">
+            <p class=" text-2xl font-medium leading-relaxed">{{quest.stages[0].title}}</p>
+            <p>{{quest.stages[0].text}}</p>
+            <p>{{quest.stages[0].checkType}}</p>
+            <!-- <BaseInput @input="updateAns" placeholder="Введите ответ"/> -->
+            <input class="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-base sm:leading-5" placeholder="Введите ответ" type="text" v-model="firstAns">
+          </div>
+        </div>
+        <div v-if="firstAns == quest.stages[0].answer">
+          <div v-for="(stage, index) in quest.stages.slice(1)" :key="index">
+            <div v-if='index = index' class="mb-6">
+              <p class=" text-2xl font-medium leading-relaxed">{{stage.title}}</p>
+              <p>{{stage.text}}</p>
+              <p>{{stage.checkType}}</p>
+              <input class="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-base sm:leading-5" placeholder="Введите ответ" v-model="temp"/>
+            </div>
           </div>
         </div>
       </div>
@@ -46,22 +57,29 @@
 <script>
 import { mapGetters } from "vuex";
 import Map from '@/components/Map'
-import BaseInput from '../components/reusable/BaseInput'
+// import BaseInput from '../components/reusable/BaseInput'
 
 export default {
   name: "QuestPage",
-  components:{ Map,
-    BaseInput
+  components:{ 
+    Map,
+    // BaseInput
    },
   data() {
     return {
       center:{ 
         lat: 55.932791, 
         lng: 37.439879
-      }
+      },
+      firstAns: '',
+      temp: '',
+      ansId: ''
     }  
   },
   methods: {
+    updateAns(){
+      this.temp = this.firstAns
+    }
   },
   created() {
     this.$store.dispatch("fetchQuest", this.$route.params.id);
